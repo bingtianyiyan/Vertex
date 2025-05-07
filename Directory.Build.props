@@ -1,19 +1,22 @@
 <Project>
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-     <Version>1.6.0</Version>
     <Version Condition="'$(PackageVersion)' != ''">$(PackageVersion)</Version>
     <Version Condition="'$(PackageVersion)' == ''">$(Version)</Version>
   </PropertyGroup>
   <PropertyGroup>
- <IsPreview>false</IsPreview>
-<PackageId>$([System.String]::Concat('Tiny.', $([MSBuild]::Escape($(MSBuildProjectName)))))</PackageId>
+  <!-- 基础配置 -->
+   <PackagePrefix>Tiny</PackagePrefix>
+   <PackageId>$([System.String]::Concat($(PackagePrefix), '.', $(MSBuildProjectName)))</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/bingtianyiyan/Vertex</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bingtianyiyan/Vertex.git</RepositoryUrl>
     <PackageVersion Condition="'$(PackageVersion)' != ''">$(PackageVersion)</PackageVersion>
     <PackageVersion Condition="'$(PackageVersion)' == ''">$(Version)</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/RayTale/Vertex</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/RayTale/Vertex.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/bingtianyiyan/Vertex.git</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bingtianyiyan/Vertex</RepositoryUrl>
     <PackageIcon>logo.png</PackageIcon>
     <PackageTags>orleans,event-sourcing,actor,Vertex</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
